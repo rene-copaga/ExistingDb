@@ -14,21 +14,23 @@
                 <th>Color</th>
                 <th>Slogan</th>
                 <th>Categories</th>
+                <th>Fitting</th>
             </tr>
         </thead>
         <tbody>
             @foreach (Shoes s in Model)
             {
-                <tr>
-                    <td>@s.Name</td>
-                    <td>$@s.Price.ToString("F2")</td>
-                    <td>@s.Color.Name</td>
-                    <td>@s.SalesCampaigns?.Slogan</td>
-                    <td>
-                        @String.Join(", ", s.ShoeCategoryJunction
-                        .Select(j => j.Category.Name))
-                    </td>
-                </tr>
+            <tr>
+                <td>@s.Name</td>
+                <td>$@s.PriceIncTax.ToString("F2")</td>
+                <td>@s.Color.Name</td>
+                <td>@s.SalesCampaigns?.Slogan</td>
+                <td>
+                    @String.Join(", ", s.ShoeCategoryJunction
+                    .Select(j => j.Category.Name))
+                </td>
+                <td>@s.Fitting.Name</td>
+            </tr>
             }
         </tbody>
     </table>

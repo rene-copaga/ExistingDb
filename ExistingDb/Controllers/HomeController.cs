@@ -16,7 +16,8 @@ namespace ExistingDb.Controllers
                 .Include(s => s.Color)
                 .Include(s => s.SalesCampaigns)
                 .Include(s => s.ShoeCategoryJunction)
-                    .ThenInclude(junct => junct.Category));
+                    .ThenInclude(junct => junct.Category)
+                .Include(s => s.Fitting));
         }
     }
 }
