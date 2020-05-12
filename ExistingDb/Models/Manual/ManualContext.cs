@@ -24,6 +24,13 @@ namespace ExistingDb.Models.Manual
             modelBuilder.Entity<ShoeWidth>()
                 .Property(t => t.WidthName)
                 .HasColumnName("Name");
+
+            modelBuilder.Entity<Shoe>()
+                .Property(s => s.WidthId).HasColumnName("FittingId");
+
+            modelBuilder.Entity<Shoe>()
+                .HasOne(s => s.Width).WithMany(w => w.Products)
+                .HasForeignKey(s => s.WidthId).IsRequired(true);
         }
     }
 }
