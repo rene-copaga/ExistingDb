@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ExistingDb.Models.Manual
 {
@@ -16,5 +17,8 @@ namespace ExistingDb.Models.Manual
 
         public long WidthId { get; set; }
         public ShoeWidth Width { get; set; }
+
+        public SalesCampaign Campaign { get; set; }
+        public IEnumerable<ShoeCategoryJunction> Categories { get; set; }
     }
 }

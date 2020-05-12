@@ -13,6 +13,8 @@ namespace ExistingDb.Models.Manual
 
         public DbSet<ShoeWidth> ShoeWidths { get; set; }
 
+        public DbSet<Category> Categories { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ShoeWidth>().ToTable("Fittings");
